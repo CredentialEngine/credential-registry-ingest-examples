@@ -1,0 +1,78 @@
+{
+  "@context": "https://credreg.net/ctdl/schema/context/json",
+  "@id": "https://credentialengine.github.io/credential-registry-ingest-examples/LearningProgram/1/Course-1c.json",
+  "@type": "ceterms:Course",
+  "ceterms:ctid": "ce-2626fa9d-48d0-4097-b876-56dec861e630",
+  "ceterms:name": { "en-US": "Leadership and Innovation Excellence" },
+  "ceterms:ownedBy": [
+    "https://sandbox.credentialengineregistry.org/resources/ce-7f42a13b-2c7e-4cbb-bbae-337a5187cf61"
+  ],
+  "ceterms:offeredBy": [
+    "https://sandbox.credentialengineregistry.org/resources/ce-7f42a13b-2c7e-4cbb-bbae-337a5187cf61"
+  ],
+  "ceterms:inLanguage": ["en"],
+  "ceterms:description": {
+    "en-US": "Become a visionary leader and innovator with our Leadership and Innovation Excellence course. Dive into the art of leadership, innovation strategies, and effective team management. Learn how to lead with empathy, drive innovation within your organization, and create a culture of continuous improvement. Elevate your leadership skills to inspire and influence positive change."
+  },
+  "ceterms:estimatedCost": [
+    {
+      "@type": "ceterms:CostProfile",
+      "ceterms:name": { "en-US": "Leadership and Innovation Excellence Costs" },
+      "ceterms:price": 1995.0,
+      "ceterms:currency": "US Dollar",
+      "ceterms:costDetails": "https://example.com/#leadership-and-innovation-excellence",
+      "ceterms:description": {
+        "en-US": "Leadership and Innovation Excellence cost details."
+      },
+      "ceterms:directCostType": {
+        "@type": "ceterms:CredentialAlignmentObject",
+        "ceterms:framework": "https://credreg.net/ctdl/terms/CostType",
+        "ceterms:targetNode": "costType:Tuition",
+        "ceterms:frameworkName": { "en-US": "Cost Type" },
+        "ceterms:targetNodeName": { "en-US": "Tuition" },
+        "ceterms:targetNodeDescription": {
+          "en-US": "Cost for teaching and instruction."
+        }
+      }
+    }
+  ],
+  "ceterms:entryCondition": [
+    {
+      "@type": "ceterms:ConditionProfile",
+      "ceterms:name": {
+        "en-US": "Introduction to Immersive Media B: Prerequisite"
+      },
+      "ceterms:condition": {
+        "en-US": [
+          "High-school level of mathematics knowledge",
+          "Basic familiarity with computers and the internet"
+        ]
+      },
+      "ceterms:assertedBy": [
+        "https://sandbox.credentialengineregistry.org/resources/ce-7f42a13b-2c7e-4cbb-bbae-337a5187cf61"
+      ],
+      "ceterms:description": {
+        "en-US": "Prerequisite: Successful completion of Intro to Software Development \u0026 Version Control and Introduction To Immersive Media A."
+      },
+      "ceterms:subjectWebpage": "https://example.com/#leadership-and-innovation-excellence-prerequisites",
+      "ceterms:targetLearningOpportunity": [
+        "https://credentialengine.github.io/credential-registry-ingest-examples/LearningProgram/1/Course-1a.json",
+        "https://credentialengine.github.io/credential-registry-ingest-examples/LearningProgram/1/Course-1b.json"
+      ]
+    }
+  ],
+  "ceterms:subjectWebpage": "https://example.com/#leadership-and-innovation-excellence",
+  "ceterms:availableOnlineAt": [
+    "https://example.com/#leadership-and-innovation-excellence"
+  ],
+  "ceterms:lifeCycleStatusType": {
+    "@type": "ceterms:CredentialAlignmentObject",
+    "ceterms:framework": "https://credreg.net/ctdl/terms/LifeCycleStatus",
+    "ceterms:targetNode": "lifeCycle:Active",
+    "ceterms:frameworkName": { "en-US": "Life Cycle Status" },
+    "ceterms:targetNodeName": { "en-US": "Active" },
+    "ceterms:targetNodeDescription": {
+      "en-US": "Resource is active, current, ongoing, offered, operational, or available."
+    }
+  }
+}

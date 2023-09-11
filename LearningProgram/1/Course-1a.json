@@ -1,0 +1,129 @@
+{
+  "@context": "https://credreg.net/ctdl/schema/context/json",
+  "@id": "https://credentialengine.github.io/credential-registry-ingest-examples/LearningProgram/1/Course-1a.json",
+  "@type": "ceterms:Course",
+  "ceterms:ctid": "ce-9eb5105c-c5a5-4cf5-b6e8-e228400b9f34",
+  "ceterms:name": {
+    "en-US": "Personal Growth Mastery"
+  },
+  "ceterms:ownedBy": [
+    "https://sandbox.credentialengineregistry.org/resources/ce-7f42a13b-2c7e-4cbb-bbae-337a5187cf61"
+  ],
+  "ceterms:offeredBy": [
+    "https://sandbox.credentialengineregistry.org/resources/ce-7f42a13b-2c7e-4cbb-bbae-337a5187cf61"
+  ],
+  "ceterms:inLanguage": ["en"],
+  "ceterms:description": {
+    "en-US": "Unlock your full potential and become the best version of yourself in our Personal Growth Mastery course. Delve into topics like self-awareness, goal setting, resilience, and mindfulness. Learn practical strategies to overcome challenges and enhance your personal and professional life. This course will empower you to take control of your destiny and lead a more fulfilling life."
+  },
+  "ceterms:deliveryType": [
+    {
+      "@type": "ceterms:CredentialAlignmentObject",
+      "ceterms:framework": "https://credreg.org/ctdl/terms/Delivery",
+      "ceterms:targetNode": "deliveryType:OnlineOnly",
+      "ceterms:frameworkName": { "en-US": "Delivery Type" },
+      "ceterms:targetNodeName": { "en-US": "Online Only" },
+      "ceterms:targetNodeDescription": {
+        "en-US": "Delivery is only via the Internet."
+      }
+    }
+  ],
+  "ceterms:dateEffective": "2022-04-14",
+  "ceterms:estimatedCost": [
+    {
+      "@type": "ceterms:CostProfile",
+      "ceterms:name": {
+        "en-US": "Personal Growth Mastery"
+      },
+      "ceterms:price": 995.0,
+      "ceterms:currency": "US Dollar",
+      "ceterms:costDetails": "https://example.com/#personal-growth-mastery-costs",
+      "ceterms:description": {
+        "en-US": "Personal Growth Mastery is a course for unlocking your full potential"
+      },
+      "ceterms:directCostType": {
+        "@type": "ceterms:CredentialAlignmentObject",
+        "ceterms:framework": "https://credreg.org/ctdl/terms/CostType",
+        "ceterms:targetNode": "costType:EnrollmentFee",
+        "ceterms:frameworkName": { "en-US": "Cost Type" },
+        "ceterms:targetNodeName": { "en-US": "Enrollment Fee" },
+        "ceterms:targetNodeDescription": {
+          "en-US": "Cost to enroll in the learning opportunity being described."
+        }
+      }
+    }
+  ],
+  "ceterms:entryCondition": [
+    {
+      "@type": "ceterms:ConditionProfile",
+      "ceterms:name": {
+        "en-US": "Personal Growth Mastery prerequisite knowledge"
+      },
+      "ceterms:condition": {
+        "en-US": ["High-school level of mathematics knowledge"]
+      },
+      "ceterms:assertedBy": [
+        "https://sandbox.credentialengineregistry.org/resources/ce-7f42a13b-2c7e-4cbb-bbae-337a5187cf61"
+      ],
+      "ceterms:description": {
+        "en-US": "Personal Growth Mastery prerequisite knowledge is not much, just some math"
+      },
+      "ceterms:subjectWebpage": "https://example.com/#prerequisites"
+    }
+  ],
+  "ceterms:occupationType": [
+    {
+      "@type": "ceterms:CredentialAlignmentObject",
+      "ceterms:framework": "https://www.bls.gov/soc/",
+      "ceterms:targetNode": "https://www.onetonline.org/link/summary/15-1131.00",
+      "ceterms:codedNotation": "15-1131.00",
+      "ceterms:frameworkName": {
+        "en-US": "Standard Occupational Classification"
+      },
+      "ceterms:targetNodeName": { "en-US": "Computer Programmers" },
+      "ceterms:targetNodeDescription": {
+        "en-US": "Create, modify, and test the code, forms, and script that allow computer applications to run. Work from specifications drawn up by software developers or other individuals. May assist software developers by analyzing user needs and designing software solutions. May develop and write computer programs to store, locate, and retrieve specific documents, data, and information."
+      }
+    },
+    {
+      "@type": "ceterms:CredentialAlignmentObject",
+      "ceterms:framework": "https://www.bls.gov/soc/",
+      "ceterms:targetNode": "https://onetonline.org/link/summary/15-1251.00",
+      "ceterms:codedNotation": "15-1251.00",
+      "ceterms:frameworkName": {
+        "en-US": "Standard Occupational Classification"
+      },
+      "ceterms:targetNodeName": { "en-US": "Computer Programmers" },
+      "ceterms:targetNodeDescription": {
+        "en-US": "Create, modify, and test the code, forms, and script that allow computer applications to run. Work from specifications drawn up by software developers or other individuals. May assist software developers by analyzing user needs and designing software solutions. May develop and write computer programs to store, locate, and retrieve specific documents, data, and information."
+      }
+    }
+  ],
+  "ceterms:subjectWebpage": "https://example.com/#personal-growth-mastery",
+  "ceterms:audienceLevelType": [
+    {
+      "@type": "ceterms:CredentialAlignmentObject",
+      "ceterms:framework": "https://credreg.org/ctdl/terms/AudienceLevel",
+      "ceterms:targetNode": "audLevel:BeginnerLevel",
+      "ceterms:frameworkName": { "en-US": "Audience Level" },
+      "ceterms:targetNodeName": { "en-US": "Beginner Level" },
+      "ceterms:targetNodeDescription": {
+        "en-US": "Intended for novices or those with limited experience personally growing."
+      }
+    }
+  ],
+  "ceterms:availableOnlineAt": ["https://example.com/#course-1a"],
+  "ceterms:lifeCycleStatusType": {
+    "@type": "ceterms:CredentialAlignmentObject",
+    "ceterms:framework": "https://credreg.org/ctdl/terms/LifeCycleStatus",
+    "ceterms:targetNode": "lifeCycle:Active",
+    "ceterms:frameworkName": { "en-US": "Life Cycle Status" },
+    "ceterms:targetNodeName": { "en-US": "Active" },
+    "ceterms:targetNodeDescription": {
+      "en-US": "Resource is active, current, ongoing, offered, operational, or available."
+    }
+  },
+  "ceterms:deliveryTypeDescription": {
+    "en-US": "This is an online, hands-on class."
+  }
+}

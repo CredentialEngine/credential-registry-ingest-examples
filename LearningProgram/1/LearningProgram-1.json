@@ -1,0 +1,123 @@
+{
+  "@context": "https://credreg.net/ctdl/schema/context/json",
+  "@id": "https://credentialengine.github.io/credential-registry-ingest-examples/LearningProgram/1/LearningProgram-1.json",
+  "@type": "ceterms:LearningProgram",
+  "ceterms:ctid": "ce-bada0d68-f026-441d-80c1-cdabace4e525",
+  "ceterms:name": { "en-US": "Lifelong Learning Accelerator" },
+  "ceterms:hasPart": [
+    "https://credentialengine.github.io/credential-registry-ingest-examples/LearningProgram/1/Course-1a.json",
+    "https://credentialengine.github.io/credential-registry-ingest-examples/LearningProgram/1/Course-1b.json",
+    "https://credentialengine.github.io/credential-registry-ingest-examples/LearningProgram/1/Course-1c.json"
+  ],
+  "ceterms:ownedBy": [
+    "https://sandbox.credentialengineregistry.org/resources/ce-7f42a13b-2c7e-4cbb-bbae-337a5187cf61"
+  ],
+  "ceterms:requires": [
+    {
+      "@type": "ceterms:ConditionProfile",
+      "ceterms:name": {
+        "en-US": "Program Prerequisite Conditions"
+      },
+      "ceterms:assertedBy": [
+        "https://sandbox.credentialengineregistry.org/resources/ce-7f42a13b-2c7e-4cbb-bbae-337a5187cf61"
+      ],
+      "ceterms:description": {
+        "en-US": "Anyone who is a high school graduate or anyone age 18 or older can enroll."
+      }
+    }
+  ],
+  "ceterms:offeredBy": [
+    "https://sandbox.credentialengineregistry.org/resources/ce-7f42a13b-2c7e-4cbb-bbae-337a5187cf61"
+  ],
+  "ceterms:inLanguage": ["en-US"],
+  "ceterms:description": {
+    "en-US": "Are you ready to embark on a journey of continuous growth and self-improvement? The Lifelong Learning Accelerator is a cutting-edge educational program designed to empower individuals like you to unlock your full potential, embrace lifelong learning, and thrive in an ever-evolving world."
+  },
+  "ceterms:isNonCredit": true,
+  "ceterms:deliveryType": [
+    {
+      "@type": "ceterms:CredentialAlignmentObject",
+      "ceterms:framework": "https://credreg.net/ctdl/terms/Delivery",
+      "ceterms:targetNode": "deliveryType:BlendedDelivery",
+      "ceterms:frameworkName": { "en-US": "Delivery Type" },
+      "ceterms:targetNodeName": { "en-US": "Blended Delivery" },
+      "ceterms:targetNodeDescription": {
+        "en-US": "Delivery includes significant levels of both in person and online."
+      }
+    }
+  ],
+  "ceterms:estimatedCost": [
+    {
+      "@type": "ceterms:CostProfile",
+      "ceterms:name": { "en-US": "Cost" },
+      "ceterms:price": 4485.0,
+      "ceterms:currency": "US Dollar",
+      "ceterms:costDetails": "https://example.com/#lifelong-learning-accelerator-costs",
+      "ceterms:description": {
+        "en-US": "$4485 for all three courses listed below:\n\nPersonal Growth Mastery: $995\nDigital Skills Revolution: $1495\nLeadership and Innovation Excellence: $1995"
+      },
+      "ceterms:directCostType": {
+        "@type": "ceterms:CredentialAlignmentObject",
+        "ceterms:framework": "https://credreg.net/ctdl/terms/CostType",
+        "ceterms:targetNode": "costType:AggregateCost",
+        "ceterms:frameworkName": { "en-US": "Cost Type" },
+        "ceterms:targetNodeName": { "en-US": "Aggregate Cost" },
+        "ceterms:targetNodeDescription": { "en-US": "Sum of direct costs." }
+      }
+    }
+  ],
+  "ceterms:occupationType": [
+    {
+      "@type": "ceterms:CredentialAlignmentObject",
+      "ceterms:targetNodeName": { "en-US": "Data Analyst" }
+    },
+    {
+      "@type": "ceterms:CredentialAlignmentObject",
+      "ceterms:targetNodeName": { "en-US": "Life Coach" }
+    },
+    {
+      "@type": "ceterms:CredentialAlignmentObject",
+      "ceterms:targetNodeName": { "en-US": "Digital Marketing Specialist" }
+    },
+    {
+      "@type": "ceterms:CredentialAlignmentObject",
+      "ceterms:targetNodeName": { "en-US": "Innovation Manager" }
+    }
+  ],
+  "ceterms:subjectWebpage": "https://example.com",
+  "ceterms:audienceLevelType": [
+    {
+      "@type": "ceterms:CredentialAlignmentObject",
+      "ceterms:framework": "https://credreg.net/ctdl/terms/AudienceLevel",
+      "ceterms:targetNode": "audLevel:SecondaryLevel",
+      "ceterms:frameworkName": { "en-US": "Audience Level" },
+      "ceterms:targetNodeName": { "en-US": "Secondary School or Equivalent" },
+      "ceterms:targetNodeDescription": {
+        "en-US": "Intended for those attending secondary (high-school) level programs."
+      }
+    }
+  ],
+  "ceterms:availableOnlineAt": ["https://example.com"],
+  "ceterms:estimatedDuration": [
+    {
+      "@type": "ceterms:DurationProfile",
+      "ceterms:description": {
+        "en-US": "Three quarters, one course per quarter; one to two nights per week, five to ten hours of student commitment per week."
+      },
+      "ceterms:exactDuration": "P9M"
+    }
+  ],
+  "ceterms:lifeCycleStatusType": {
+    "@type": "ceterms:CredentialAlignmentObject",
+    "ceterms:framework": "https://credreg.net/ctdl/terms/LifeCycleStatus",
+    "ceterms:targetNode": "lifeCycle:Active",
+    "ceterms:frameworkName": { "en-US": "Life Cycle Status" },
+    "ceterms:targetNodeName": { "en-US": "Active" },
+    "ceterms:targetNodeDescription": {
+      "en-US": "Resource is active, current, ongoing, offered, operational, or available."
+    }
+  },
+  "ceterms:deliveryTypeDescription": {
+    "en-US": "Courses will be offered in a hybrid format, with weekly instructions provided online and face-to-face class meetings every other week after the first course."
+  }
+}

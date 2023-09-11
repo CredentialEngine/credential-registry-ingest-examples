@@ -1,0 +1,77 @@
+{
+  "@context": "https://credreg.net/ctdl/schema/context/json",
+  "@id": "https://credentialengine.github.io/credential-registry-ingest-examples/LearningProgram/1/Course-1b.json",
+  "@type": "ceterms:Course",
+  "ceterms:ctid": "ce-cb070f9b-ed23-411e-babe-23341393bce7",
+  "ceterms:name": { "en-US": "Digital Skills Revolution" },
+  "ceterms:ownedBy": [
+    "https://sandbox.credentialengineregistry.org/resources/ce-7f42a13b-2c7e-4cbb-bbae-337a5187cf61"
+  ],
+  "ceterms:offeredBy": [
+    "https://sandbox.credentialengineregistry.org/resources/ce-7f42a13b-2c7e-4cbb-bbae-337a5187cf61"
+  ],
+  "ceterms:inLanguage": ["en"],
+  "ceterms:description": {
+    "en-US": "In the age of digital transformation, our Digital Skills Revolution course equips you with the essential skills needed to thrive in a technology-driven world. Explore topics such as data analytics, digital marketing, coding, and cybersecurity. Gain hands-on experience through practical projects and stay ahead in a competitive job market by mastering the digital landscape."
+  },
+  "ceterms:estimatedCost": [
+    {
+      "@type": "ceterms:CostProfile",
+      "ceterms:name": { "en-US": "Digital Skills Revolution" },
+      "ceterms:price": 1495.0,
+      "ceterms:currency": "US Dollar",
+      "ceterms:costDetails": "https://example.com/#digital-skills-revolution-costs",
+      "ceterms:description": {
+        "en-US": "Digital Skills Revolution Costs"
+      },
+      "ceterms:directCostType": {
+        "@type": "ceterms:CredentialAlignmentObject",
+        "ceterms:framework": "https://credreg.net/ctdl/terms/CostType",
+        "ceterms:targetNode": "costType:Tuition",
+        "ceterms:frameworkName": { "en-US": "Cost Type" },
+        "ceterms:targetNodeName": { "en-US": "Tuition" },
+        "ceterms:targetNodeDescription": {
+          "en-US": "Cost for teaching and instruction."
+        }
+      }
+    }
+  ],
+  "ceterms:entryCondition": [
+    {
+      "@type": "ceterms:ConditionProfile",
+      "ceterms:name": {
+        "en-US": "Introduction to Immersive Media A: Prerequisite"
+      },
+      "ceterms:condition": {
+        "en-US": [
+          "High-school level of mathematics knowledge",
+          "Basic familiarity with computers and the internet"
+        ]
+      },
+      "ceterms:assertedBy": [
+        "https://sandbox.credentialengineregistry.org/resources/ce-7f42a13b-2c7e-4cbb-bbae-337a5187cf61"
+      ],
+      "ceterms:description": {
+        "en-US": "Prerequisite: Successful completion of Intro to Software Development \u0026 Version Control."
+      },
+      "ceterms:subjectWebpage": "https://example.com/#digital-skills-revolution-prerequisites",
+      "ceterms:targetLearningOpportunity": [
+        "https://credentialengine.github.io/credential-registry-ingest-examples/LearningProgram/1/Course-1a.json"
+      ]
+    }
+  ],
+  "ceterms:subjectWebpage": "https://example.com/#digital-skills-revolution",
+  "ceterms:availableOnlineAt": [
+    "https://example.com/#digital-skills-revolution"
+  ],
+  "ceterms:lifeCycleStatusType": {
+    "@type": "ceterms:CredentialAlignmentObject",
+    "ceterms:framework": "https://credreg.net/ctdl/terms/LifeCycleStatus",
+    "ceterms:targetNode": "lifeCycle:Active",
+    "ceterms:frameworkName": { "en-US": "Life Cycle Status" },
+    "ceterms:targetNodeName": { "en-US": "Active" },
+    "ceterms:targetNodeDescription": {
+      "en-US": "Resource is active, current, ongoing, offered, operational, or available."
+    }
+  }
+}
