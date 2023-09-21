@@ -1,0 +1,12 @@
+theme: minima
+header_pages:
+  - index.md
+  - Organization/index.md
+  - Credential/index.md
+  - LearningProgram/index.md
+author:
+  name: Credential Engine
+  email: "contact@credentialengine.org"
+minima:
+  social_links:
+    - { platform: github, user_url: "https://github.com/credentialengine" }
