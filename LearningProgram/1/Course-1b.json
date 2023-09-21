@@ -5,10 +5,10 @@
   "ceterms:ctid": "ce-cb070f9b-ed23-411e-babe-23341393bce7",
   "ceterms:name": { "en-US": "Digital Skills Revolution" },
   "ceterms:ownedBy": [
-    "https://sandbox.credentialengineregistry.org/resources/ce-7f42a13b-2c7e-4cbb-bbae-337a5187cf61"
+    "https://credentialengine.github.io/credential-registry-ingest-examples/Organization/1/Organization-1.json"
   ],
   "ceterms:offeredBy": [
-    "https://sandbox.credentialengineregistry.org/resources/ce-7f42a13b-2c7e-4cbb-bbae-337a5187cf61"
+    "https://credentialengine.github.io/credential-registry-ingest-examples/Organization/1/Organization-1.json"
   ],
   "ceterms:inLanguage": ["en"],
   "ceterms:description": {
@@ -49,7 +49,7 @@
         ]
       },
       "ceterms:assertedBy": [
-        "https://sandbox.credentialengineregistry.org/resources/ce-7f42a13b-2c7e-4cbb-bbae-337a5187cf61"
+        "https://credentialengine.github.io/credential-registry-ingest-examples/Organization/1/Organization-1.json"
       ],
       "ceterms:description": {
         "en-US": "Prerequisite: Successful completion of Intro to Software Development \u0026 Version Control."

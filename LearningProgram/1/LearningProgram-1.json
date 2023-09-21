@@ -10,7 +10,7 @@
     "https://credentialengine.github.io/credential-registry-ingest-examples/LearningProgram/1/Course-1c.json"
   ],
   "ceterms:ownedBy": [
-    "https://sandbox.credentialengineregistry.org/resources/ce-7f42a13b-2c7e-4cbb-bbae-337a5187cf61"
+    "https://credentialengine.github.io/credential-registry-ingest-examples/Organization/1/Organization-1.json"
   ],
   "ceterms:requires": [
     {
@@ -19,7 +19,7 @@
         "en-US": "Program Prerequisite Conditions"
       },
       "ceterms:assertedBy": [
-        "https://sandbox.credentialengineregistry.org/resources/ce-7f42a13b-2c7e-4cbb-bbae-337a5187cf61"
+        "https://credentialengine.github.io/credential-registry-ingest-examples/Organization/1/Organization-1.json"
       ],
       "ceterms:description": {
         "en-US": "Anyone who is a high school graduate or anyone age 18 or older can enroll."
@@ -27,7 +27,7 @@
     }
   ],
   "ceterms:offeredBy": [
-    "https://sandbox.credentialengineregistry.org/resources/ce-7f42a13b-2c7e-4cbb-bbae-337a5187cf61"
+    "https://credentialengine.github.io/credential-registry-ingest-examples/Organization/1/Organization-1.json"
   ],
   "ceterms:inLanguage": ["en-US"],
   "ceterms:description": {
@@ -91,7 +91,9 @@
       "ceterms:framework": "https://credreg.net/ctdl/terms/AudienceLevel",
       "ceterms:targetNode": "audLevel:SecondaryLevel",
       "ceterms:frameworkName": { "en-US": "Audience Level" },
-      "ceterms:targetNodeName": { "en-US": "Secondary School or Equivalent" },
+      "ceterms:targetNodeName": {
+        "en-US": "Secondary School or Equivalent"
+      },
       "ceterms:targetNodeDescription": {
         "en-US": "Intended for those attending secondary (high-school) level programs."
       }

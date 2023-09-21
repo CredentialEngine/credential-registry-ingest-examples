@@ -1,0 +1,64 @@
+{
+  "@context": "https://credreg.net/ctdl/schema/context/json",
+  "@id": "https://credentialengine.github.io/credential-registry-ingest-examples/Organization/1/Organization-1.json",
+  "@type": "ceterms:Organization",
+  "ceterms:name": { "en-US": "Example University" },
+  "ceterms:ctid": "ce-7f42a13b-2c7e-4cbb-bbae-337a5187cf61",
+  "ceterms:email": ["contact@example.edu"],
+  "ceterms:address": [
+    {
+      "@type": "ceterms:Place",
+      "ceterms:name": {
+        "en-US": "Example University Administration Building"
+      },
+      "ceterms:postalCode": "68005",
+      "ceterms:addressRegion": {
+        "en-US": "Nebraska"
+      },
+      "ceterms:streetAddress": {
+        "en-US": "1000 Beispiel Blvd"
+      },
+      "ceterms:addressCountry": {
+        "en-US": "United States"
+      },
+      "ceterms:addressLocality": {
+        "en-US": "Exampleton"
+      }
+    }
+  ],
+  "ceterms:agentType": [
+    {
+      "@type": "ceterms:CredentialAlignmentObject",
+      "ceterms:framework": "https://credreg.net/ctdl/terms/OrganizationType",
+      "ceterms:targetNode": "orgType:Postsecondary",
+      "ceterms:frameworkName": {
+        "en-US": "Organization Type"
+      },
+      "ceterms:targetNodeName": {
+        "en-US": "Postsecondary Educational Institution"
+      },
+      "ceterms:targetNodeDescription": {
+        "en-US": "Organization such as a college or university."
+      }
+    }
+  ],
+  "ceterms:socialMedia": ["https://socialmedia.example.edu"],
+  "ceterms:agentSectorType": [
+    {
+      "@type": "ceterms:CredentialAlignmentObject",
+      "ceterms:framework": "https://credreg.net/ctdl/terms/AgentSector",
+      "ceterms:targetNode": "agentSector:PrivateNonProfit",
+      "ceterms:frameworkName": {
+        "en-US": "Agent Sector"
+      },
+      "ceterms:targetNodeName": {
+        "en-US": "Private Not-For-Profit"
+      },
+      "ceterms:targetNodeDescription": {
+        "en-US": "Sector that contains privately-owned organizations that operate on a non-profit basis."
+      }
+    }
+  ],
+  "ceterms:subjectWebpage": "https://example.edu",
+  "ceterms:foundingDate": "1999"
+}

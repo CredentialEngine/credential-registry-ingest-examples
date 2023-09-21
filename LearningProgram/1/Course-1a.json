@@ -7,10 +7,10 @@
     "en-US": "Personal Growth Mastery"
   },
   "ceterms:ownedBy": [
-    "https://sandbox.credentialengineregistry.org/resources/ce-7f42a13b-2c7e-4cbb-bbae-337a5187cf61"
+    "https://credentialengine.github.io/credential-registry-ingest-examples/Organization/1/Organization-1.json"
   ],
   "ceterms:offeredBy": [
-    "https://sandbox.credentialengineregistry.org/resources/ce-7f42a13b-2c7e-4cbb-bbae-337a5187cf61"
+    "https://credentialengine.github.io/credential-registry-ingest-examples/Organization/1/Organization-1.json"
   ],
   "ceterms:inLanguage": ["en"],
   "ceterms:description": {
@@ -63,7 +63,7 @@
         "en-US": ["High-school level of mathematics knowledge"]
       },
       "ceterms:assertedBy": [
-        "https://sandbox.credentialengineregistry.org/resources/ce-7f42a13b-2c7e-4cbb-bbae-337a5187cf61"
+        "https://credentialengine.github.io/credential-registry-ingest-examples/Organization/1/Organization-1.json"
       ],
       "ceterms:description": {
         "en-US": "Personal Growth Mastery prerequisite knowledge is not much, just some math"

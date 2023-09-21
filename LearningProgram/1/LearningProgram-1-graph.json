@@ -1,0 +1,416 @@
+{
+  "@id": "https://credentialengine.github.io/credential-registry-ingest-examples/LearningProgram/1/LearningProgram-1-graph.json",
+  "@graph": [
+    {
+      "@context": "https://credreg.net/ctdl/schema/context/json",
+      "@id": "https://credentialengine.github.io/credential-registry-ingest-examples/LearningProgram/1/LearningProgram-1.json",
+      "@type": "ceterms:LearningProgram",
+      "ceterms:ctid": "ce-bada0d68-f026-441d-80c1-cdabace4e525",
+      "ceterms:name": { "en-US": "Lifelong Learning Accelerator" },
+      "ceterms:hasPart": [
+        "https://credentialengine.github.io/credential-registry-ingest-examples/LearningProgram/1/Course-1a.json",
+        "https://credentialengine.github.io/credential-registry-ingest-examples/LearningProgram/1/Course-1b.json",
+        "https://credentialengine.github.io/credential-registry-ingest-examples/LearningProgram/1/Course-1c.json"
+      ],
+      "ceterms:ownedBy": [
+        "https://credentialengine.github.io/credential-registry-ingest-examples/Organization/1/Organization-1.json"
+      ],
+      "ceterms:requires": [
+        {
+          "@type": "ceterms:ConditionProfile",
+          "ceterms:name": {
+            "en-US": "Program Prerequisite Conditions"
+          },
+          "ceterms:assertedBy": [
+            "https://credentialengine.github.io/credential-registry-ingest-examples/Organization/1/Organization-1.json"
+          ],
+          "ceterms:description": {
+            "en-US": "Anyone who is a high school graduate or anyone age 18 or older can enroll."
+          }
+        }
+      ],
+      "ceterms:offeredBy": [
+        "https://credentialengine.github.io/credential-registry-ingest-examples/Organization/1/Organization-1.json"
+      ],
+      "ceterms:inLanguage": ["en-US"],
+      "ceterms:description": {
+        "en-US": "Are you ready to embark on a journey of continuous growth and self-improvement? The Lifelong Learning Accelerator is a cutting-edge educational program designed to empower individuals like you to unlock your full potential, embrace lifelong learning, and thrive in an ever-evolving world."
+      },
+      "ceterms:isNonCredit": true,
+      "ceterms:deliveryType": [
+        {
+          "@type": "ceterms:CredentialAlignmentObject",
+          "ceterms:framework": "https://credreg.net/ctdl/terms/Delivery",
+          "ceterms:targetNode": "deliveryType:BlendedDelivery",
+          "ceterms:frameworkName": { "en-US": "Delivery Type" },
+          "ceterms:targetNodeName": { "en-US": "Blended Delivery" },
+          "ceterms:targetNodeDescription": {
+            "en-US": "Delivery includes significant levels of both in person and online."
+          }
+        }
+      ],
+      "ceterms:estimatedCost": [
+        {
+          "@type": "ceterms:CostProfile",
+          "ceterms:name": { "en-US": "Cost" },
+          "ceterms:price": 4485.0,
+          "ceterms:currency": "US Dollar",
+          "ceterms:costDetails": "https://example.com/#lifelong-learning-accelerator-costs",
+          "ceterms:description": {
+            "en-US": "$4485 for all three courses listed below:\n\nPersonal Growth Mastery: $995\nDigital Skills Revolution: $1495\nLeadership and Innovation Excellence: $1995"
+          },
+          "ceterms:directCostType": {
+            "@type": "ceterms:CredentialAlignmentObject",
+            "ceterms:framework": "https://credreg.net/ctdl/terms/CostType",
+            "ceterms:targetNode": "costType:AggregateCost",
+            "ceterms:frameworkName": { "en-US": "Cost Type" },
+            "ceterms:targetNodeName": { "en-US": "Aggregate Cost" },
+            "ceterms:targetNodeDescription": { "en-US": "Sum of direct costs." }
+          }
+        }
+      ],
+      "ceterms:occupationType": [
+        {
+          "@type": "ceterms:CredentialAlignmentObject",
+          "ceterms:targetNodeName": { "en-US": "Data Analyst" }
+        },
+        {
+          "@type": "ceterms:CredentialAlignmentObject",
+          "ceterms:targetNodeName": { "en-US": "Life Coach" }
+        },
+        {
+          "@type": "ceterms:CredentialAlignmentObject",
+          "ceterms:targetNodeName": { "en-US": "Digital Marketing Specialist" }
+        },
+        {
+          "@type": "ceterms:CredentialAlignmentObject",
+          "ceterms:targetNodeName": { "en-US": "Innovation Manager" }
+        }
+      ],
+      "ceterms:subjectWebpage": "https://example.com",
+      "ceterms:audienceLevelType": [
+        {
+          "@type": "ceterms:CredentialAlignmentObject",
+          "ceterms:framework": "https://credreg.net/ctdl/terms/AudienceLevel",
+          "ceterms:targetNode": "audLevel:SecondaryLevel",
+          "ceterms:frameworkName": { "en-US": "Audience Level" },
+          "ceterms:targetNodeName": {
+            "en-US": "Secondary School or Equivalent"
+          },
+          "ceterms:targetNodeDescription": {
+            "en-US": "Intended for those attending secondary (high-school) level programs."
+          }
+        }
+      ],
+      "ceterms:availableOnlineAt": ["https://example.com"],
+      "ceterms:estimatedDuration": [
+        {
+          "@type": "ceterms:DurationProfile",
+          "ceterms:description": {
+            "en-US": "Three quarters, one course per quarter; one to two nights per week, five to ten hours of student commitment per week."
+          },
+          "ceterms:exactDuration": "P9M"
+        }
+      ],
+      "ceterms:lifeCycleStatusType": {
+        "@type": "ceterms:CredentialAlignmentObject",
+        "ceterms:framework": "https://credreg.net/ctdl/terms/LifeCycleStatus",
+        "ceterms:targetNode": "lifeCycle:Active",
+        "ceterms:frameworkName": { "en-US": "Life Cycle Status" },
+        "ceterms:targetNodeName": { "en-US": "Active" },
+        "ceterms:targetNodeDescription": {
+          "en-US": "Resource is active, current, ongoing, offered, operational, or available."
+        }
+      },
+      "ceterms:deliveryTypeDescription": {
+        "en-US": "Courses will be offered in a hybrid format, with weekly instructions provided online and face-to-face class meetings every other week after the first course."
+      }
+    },
+    {
+      "@context": "https://credreg.net/ctdl/schema/context/json",
+      "@id": "https://credentialengine.github.io/credential-registry-ingest-examples/LearningProgram/1/Course-1a.json",
+      "@type": "ceterms:Course",
+      "ceterms:ctid": "ce-9eb5105c-c5a5-4cf5-b6e8-e228400b9f34",
+      "ceterms:name": {
+        "en-US": "Personal Growth Mastery"
+      },
+      "ceterms:ownedBy": [
+        "https://credentialengine.github.io/credential-registry-ingest-examples/Organization/1/Organization-1.json"
+      ],
+      "ceterms:offeredBy": [
+        "https://credentialengine.github.io/credential-registry-ingest-examples/Organization/1/Organization-1.json"
+      ],
+      "ceterms:inLanguage": ["en"],
+      "ceterms:description": {
+        "en-US": "Unlock your full potential and become the best version of yourself in our Personal Growth Mastery course. Delve into topics like self-awareness, goal setting, resilience, and mindfulness. Learn practical strategies to overcome challenges and enhance your personal and professional life. This course will empower you to take control of your destiny and lead a more fulfilling life."
+      },
+      "ceterms:deliveryType": [
+        {
+          "@type": "ceterms:CredentialAlignmentObject",
+          "ceterms:framework": "https://credreg.org/ctdl/terms/Delivery",
+          "ceterms:targetNode": "deliveryType:OnlineOnly",
+          "ceterms:frameworkName": { "en-US": "Delivery Type" },
+          "ceterms:targetNodeName": { "en-US": "Online Only" },
+          "ceterms:targetNodeDescription": {
+            "en-US": "Delivery is only via the Internet."
+          }
+        }
+      ],
+      "ceterms:dateEffective": "2022-04-14",
+      "ceterms:estimatedCost": [
+        {
+          "@type": "ceterms:CostProfile",
+          "ceterms:name": {
+            "en-US": "Personal Growth Mastery"
+          },
+          "ceterms:price": 995.0,
+          "ceterms:currency": "US Dollar",
+          "ceterms:costDetails": "https://example.com/#personal-growth-mastery-costs",
+          "ceterms:description": {
+            "en-US": "Personal Growth Mastery is a course for unlocking your full potential"
+          },
+          "ceterms:directCostType": {
+            "@type": "ceterms:CredentialAlignmentObject",
+            "ceterms:framework": "https://credreg.org/ctdl/terms/CostType",
+            "ceterms:targetNode": "costType:EnrollmentFee",
+            "ceterms:frameworkName": { "en-US": "Cost Type" },
+            "ceterms:targetNodeName": { "en-US": "Enrollment Fee" },
+            "ceterms:targetNodeDescription": {
+              "en-US": "Cost to enroll in the learning opportunity being described."
+            }
+          }
+        }
+      ],
+      "ceterms:entryCondition": [
+        {
+          "@type": "ceterms:ConditionProfile",
+          "ceterms:name": {
+            "en-US": "Personal Growth Mastery prerequisite knowledge"
+          },
+          "ceterms:condition": {
+            "en-US": ["High-school level of mathematics knowledge"]
+          },
+          "ceterms:assertedBy": [
+            "https://credentialengine.github.io/credential-registry-ingest-examples/Organization/1/Organization-1.json"
+          ],
+          "ceterms:description": {
+            "en-US": "Personal Growth Mastery prerequisite knowledge is not much, just some math"
+          },
+          "ceterms:subjectWebpage": "https://example.com/#prerequisites"
+        }
+      ],
+      "ceterms:occupationType": [
+        {
+          "@type": "ceterms:CredentialAlignmentObject",
+          "ceterms:framework": "https://www.bls.gov/soc/",
+          "ceterms:targetNode": "https://www.onetonline.org/link/summary/15-1131.00",
+          "ceterms:codedNotation": "15-1131.00",
+          "ceterms:frameworkName": {
+            "en-US": "Standard Occupational Classification"
+          },
+          "ceterms:targetNodeName": { "en-US": "Computer Programmers" },
+          "ceterms:targetNodeDescription": {
+            "en-US": "Create, modify, and test the code, forms, and script that allow computer applications to run. Work from specifications drawn up by software developers or other individuals. May assist software developers by analyzing user needs and designing software solutions. May develop and write computer programs to store, locate, and retrieve specific documents, data, and information."
+          }
+        },
+        {
+          "@type": "ceterms:CredentialAlignmentObject",
+          "ceterms:framework": "https://www.bls.gov/soc/",
+          "ceterms:targetNode": "https://onetonline.org/link/summary/15-1251.00",
+          "ceterms:codedNotation": "15-1251.00",
+          "ceterms:frameworkName": {
+            "en-US": "Standard Occupational Classification"
+          },
+          "ceterms:targetNodeName": { "en-US": "Computer Programmers" },
+          "ceterms:targetNodeDescription": {
+            "en-US": "Create, modify, and test the code, forms, and script that allow computer applications to run. Work from specifications drawn up by software developers or other individuals. May assist software developers by analyzing user needs and designing software solutions. May develop and write computer programs to store, locate, and retrieve specific documents, data, and information."
+          }
+        }
+      ],
+      "ceterms:subjectWebpage": "https://example.com/#personal-growth-mastery",
+      "ceterms:audienceLevelType": [
+        {
+          "@type": "ceterms:CredentialAlignmentObject",
+          "ceterms:framework": "https://credreg.org/ctdl/terms/AudienceLevel",
+          "ceterms:targetNode": "audLevel:BeginnerLevel",
+          "ceterms:frameworkName": { "en-US": "Audience Level" },
+          "ceterms:targetNodeName": { "en-US": "Beginner Level" },
+          "ceterms:targetNodeDescription": {
+            "en-US": "Intended for novices or those with limited experience personally growing."
+          }
+        }
+      ],
+      "ceterms:availableOnlineAt": ["https://example.com/#course-1a"],
+      "ceterms:lifeCycleStatusType": {
+        "@type": "ceterms:CredentialAlignmentObject",
+        "ceterms:framework": "https://credreg.org/ctdl/terms/LifeCycleStatus",
+        "ceterms:targetNode": "lifeCycle:Active",
+        "ceterms:frameworkName": { "en-US": "Life Cycle Status" },
+        "ceterms:targetNodeName": { "en-US": "Active" },
+        "ceterms:targetNodeDescription": {
+          "en-US": "Resource is active, current, ongoing, offered, operational, or available."
+        }
+      },
+      "ceterms:deliveryTypeDescription": {
+        "en-US": "This is an online, hands-on class."
+      }
+    },
+    {
+      "@context": "https://credreg.net/ctdl/schema/context/json",
+      "@id": "https://credentialengine.github.io/credential-registry-ingest-examples/LearningProgram/1/Course-1b.json",
+      "@type": "ceterms:Course",
+      "ceterms:ctid": "ce-cb070f9b-ed23-411e-babe-23341393bce7",
+      "ceterms:name": { "en-US": "Digital Skills Revolution" },
+      "ceterms:ownedBy": [
+        "https://credentialengine.github.io/credential-registry-ingest-examples/Organization/1/Organization-1.json"
+      ],
+      "ceterms:offeredBy": [
+        "https://credentialengine.github.io/credential-registry-ingest-examples/Organization/1/Organization-1.json"
+      ],
+      "ceterms:inLanguage": ["en"],
+      "ceterms:description": {
+        "en-US": "In the age of digital transformation, our Digital Skills Revolution course equips you with the essential skills needed to thrive in a technology-driven world. Explore topics such as data analytics, digital marketing, coding, and cybersecurity. Gain hands-on experience through practical projects and stay ahead in a competitive job market by mastering the digital landscape."
+      },
+      "ceterms:estimatedCost": [
+        {
+          "@type": "ceterms:CostProfile",
+          "ceterms:name": { "en-US": "Digital Skills Revolution" },
+          "ceterms:price": 1495.0,
+          "ceterms:currency": "US Dollar",
+          "ceterms:costDetails": "https://example.com/#digital-skills-revolution-costs",
+          "ceterms:description": {
+            "en-US": "Digital Skills Revolution Costs"
+          },
+          "ceterms:directCostType": {
+            "@type": "ceterms:CredentialAlignmentObject",
+            "ceterms:framework": "https://credreg.net/ctdl/terms/CostType",
+            "ceterms:targetNode": "costType:Tuition",
+            "ceterms:frameworkName": { "en-US": "Cost Type" },
+            "ceterms:targetNodeName": { "en-US": "Tuition" },
+            "ceterms:targetNodeDescription": {
+              "en-US": "Cost for teaching and instruction."
+            }
+          }
+        }
+      ],
+      "ceterms:entryCondition": [
+        {
+          "@type": "ceterms:ConditionProfile",
+          "ceterms:name": {
+            "en-US": "Introduction to Immersive Media A: Prerequisite"
+          },
+          "ceterms:condition": {
+            "en-US": [
+              "High-school level of mathematics knowledge",
+              "Basic familiarity with computers and the internet"
+            ]
+          },
+          "ceterms:assertedBy": [
+            "https://credentialengine.github.io/credential-registry-ingest-examples/Organization/1/Organization-1.json"
+          ],
+          "ceterms:description": {
+            "en-US": "Prerequisite: Successful completion of Intro to Software Development \u0026 Version Control."
+          },
+          "ceterms:subjectWebpage": "https://example.com/#digital-skills-revolution-prerequisites",
+          "ceterms:targetLearningOpportunity": [
+            "https://credentialengine.github.io/credential-registry-ingest-examples/LearningProgram/1/Course-1a.json"
+          ]
+        }
+      ],
+      "ceterms:subjectWebpage": "https://example.com/#digital-skills-revolution",
+      "ceterms:availableOnlineAt": [
+        "https://example.com/#digital-skills-revolution"
+      ],
+      "ceterms:lifeCycleStatusType": {
+        "@type": "ceterms:CredentialAlignmentObject",
+        "ceterms:framework": "https://credreg.net/ctdl/terms/LifeCycleStatus",
+        "ceterms:targetNode": "lifeCycle:Active",
+        "ceterms:frameworkName": { "en-US": "Life Cycle Status" },
+        "ceterms:targetNodeName": { "en-US": "Active" },
+        "ceterms:targetNodeDescription": {
+          "en-US": "Resource is active, current, ongoing, offered, operational, or available."
+        }
+      }
+    },
+    {
+      "@context": "https://credreg.net/ctdl/schema/context/json",
+      "@id": "https://credentialengine.github.io/credential-registry-ingest-examples/LearningProgram/1/Course-1c.json",
+      "@type": "ceterms:Course",
+      "ceterms:ctid": "ce-2626fa9d-48d0-4097-b876-56dec861e630",
+      "ceterms:name": { "en-US": "Leadership and Innovation Excellence" },
+      "ceterms:ownedBy": [
+        "https://credentialengine.github.io/credential-registry-ingest-examples/Organization/1/Organization-1.json"
+      ],
+      "ceterms:offeredBy": [
+        "https://credentialengine.github.io/credential-registry-ingest-examples/Organization/1/Organization-1.json"
+      ],
+      "ceterms:inLanguage": ["en"],
+      "ceterms:description": {
+        "en-US": "Become a visionary leader and innovator with our Leadership and Innovation Excellence course. Dive into the art of leadership, innovation strategies, and effective team management. Learn how to lead with empathy, drive innovation within your organization, and create a culture of continuous improvement. Elevate your leadership skills to inspire and influence positive change."
+      },
+      "ceterms:estimatedCost": [
+        {
+          "@type": "ceterms:CostProfile",
+          "ceterms:name": {
+            "en-US": "Leadership and Innovation Excellence Costs"
+          },
+          "ceterms:price": 1995.0,
+          "ceterms:currency": "US Dollar",
+          "ceterms:costDetails": "https://example.com/#leadership-and-innovation-excellence",
+          "ceterms:description": {
+            "en-US": "Leadership and Innovation Excellence cost details."
+          },
+          "ceterms:directCostType": {
+            "@type": "ceterms:CredentialAlignmentObject",
+            "ceterms:framework": "https://credreg.net/ctdl/terms/CostType",
+            "ceterms:targetNode": "costType:Tuition",
+            "ceterms:frameworkName": { "en-US": "Cost Type" },
+            "ceterms:targetNodeName": { "en-US": "Tuition" },
+            "ceterms:targetNodeDescription": {
+              "en-US": "Cost for teaching and instruction."
+            }
+          }
+        }
+      ],
+      "ceterms:entryCondition": [
+        {
+          "@type": "ceterms:ConditionProfile",
+          "ceterms:name": {
+            "en-US": "Introduction to Immersive Media B: Prerequisite"
+          },
+          "ceterms:condition": {
+            "en-US": [
+              "High-school level of mathematics knowledge",
+              "Basic familiarity with computers and the internet"
+            ]
+          },
+          "ceterms:assertedBy": [
+            "https://credentialengine.github.io/credential-registry-ingest-examples/Organization/1/Organization-1.json"
+          ],
+          "ceterms:description": {
+            "en-US": "Prerequisite: Successful completion of Intro to Software Development \u0026 Version Control and Introduction To Immersive Media A."
+          },
+          "ceterms:subjectWebpage": "https://example.com/#leadership-and-innovation-excellence-prerequisites",
+          "ceterms:targetLearningOpportunity": [
+            "https://credentialengine.github.io/credential-registry-ingest-examples/LearningProgram/1/Course-1a.json",
+            "https://credentialengine.github.io/credential-registry-ingest-examples/LearningProgram/1/Course-1b.json"
+          ]
+        }
+      ],
+      "ceterms:subjectWebpage": "https://example.com/#leadership-and-innovation-excellence",
+      "ceterms:availableOnlineAt": [
+        "https://example.com/#leadership-and-innovation-excellence"
+      ],
+      "ceterms:lifeCycleStatusType": {
+        "@type": "ceterms:CredentialAlignmentObject",
+        "ceterms:framework": "https://credreg.net/ctdl/terms/LifeCycleStatus",
+        "ceterms:targetNode": "lifeCycle:Active",
+        "ceterms:frameworkName": { "en-US": "Life Cycle Status" },
+        "ceterms:targetNodeName": { "en-US": "Active" },
+        "ceterms:targetNodeDescription": {
+          "en-US": "Resource is active, current, ongoing, offered, operational, or available."
+        }
+      }
+    }
+  ]
+}
