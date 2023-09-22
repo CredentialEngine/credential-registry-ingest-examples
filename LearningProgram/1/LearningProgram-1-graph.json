@@ -1,8 +1,8 @@
 {
+  "@context": "https://credreg.net/ctdl/schema/context/json",
   "@id": "https://credentialengine.github.io/credential-registry-ingest-examples/LearningProgram/1/LearningProgram-1-graph.json",
   "@graph": [
     {
-      "@context": "https://credreg.net/ctdl/schema/context/json",
       "@id": "https://credentialengine.github.io/credential-registry-ingest-examples/LearningProgram/1/LearningProgram-1.json",
       "@type": "ceterms:LearningProgram",
       "ceterms:ctid": "ce-bada0d68-f026-441d-80c1-cdabace4e525",
@@ -127,7 +127,6 @@
       }
     },
     {
-      "@context": "https://credreg.net/ctdl/schema/context/json",
       "@id": "https://credentialengine.github.io/credential-registry-ingest-examples/LearningProgram/1/Course-1a.json",
       "@type": "ceterms:Course",
       "ceterms:ctid": "ce-9eb5105c-c5a5-4cf5-b6e8-e228400b9f34",
@@ -256,7 +255,6 @@
       }
     },
     {
-      "@context": "https://credreg.net/ctdl/schema/context/json",
       "@id": "https://credentialengine.github.io/credential-registry-ingest-examples/LearningProgram/1/Course-1b.json",
       "@type": "ceterms:Course",
       "ceterms:ctid": "ce-cb070f9b-ed23-411e-babe-23341393bce7",
@@ -333,7 +331,6 @@
       }
     },
     {
-      "@context": "https://credreg.net/ctdl/schema/context/json",
       "@id": "https://credentialengine.github.io/credential-registry-ingest-examples/LearningProgram/1/Course-1c.json",
       "@type": "ceterms:Course",
       "ceterms:ctid": "ce-2626fa9d-48d0-4097-b876-56dec861e630",
