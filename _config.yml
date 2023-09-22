@@ -8,3 +8,4 @@ email: 'info@credentialengine.org'
 minima:
   social_links:
     - { platform: github, user_url: 'https://github.com/credentialengine' }
+title: Credential Registry Ingest Action
