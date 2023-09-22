@@ -193,16 +193,16 @@ run the workflow at 8am server time on the first day of each month:
 `'0 8 1 * *'`. Note that `*` is a special character in YAML so you have to quote
 the cron invocation string.
 
-````yaml
-
 Create the workflow file `.github/workflows/publish-learningprogram-1.yml` with
 the following contents:
 
 ```yaml
-name: Publish test LearningProgram 1 from examples to the Registry production environment
+name:
+  Publish test LearningProgram 1 from examples to the Registry production
+  environment
 on:
   schedule:
-    - cron:  '0 8 1 * *'
+    - cron: '0 8 1 * *'
 env:
   REGISTRY_ENV: 'production'
   URLS: 'https://credentialengine.github.io/credential-registry-ingest-examples/LearningProgram/1/LearningProgram-1.json'
@@ -217,4 +217,4 @@ jobs:
           urls: ${{ env.URLS }}
           organization-ctid: 'ce-7f42a13b-2c7e-4cbb-bbae-337a5187cf61'
           registry-api-key: ${{ secrets.PRODUCTION_API_KEY }}
-````
+```
