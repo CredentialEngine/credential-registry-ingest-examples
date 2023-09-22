@@ -14,7 +14,9 @@ help us improve the action.
 ## Philosophy for self-publishing linked open data
 
 When organizations publish data themselves, the overall pattern is to select
-useful identifiers (URLs) for
+useful identifiers (URLs) for objects and make data available about the objects
+at those URLs, and potentially at other URLs as well (such as when those objects
+appear within a graph).
 
 The [5-star Open Data](https://5stardata.info/en/) plan contains some useful
 guidance for publishing linked open data. The Credential Registry Publish Action
@@ -41,7 +43,9 @@ includes that linked open data entities should:
 
 ## Recommended practices for publishing data to the Credential Registry
 
-Here are some specific
+Here are some specific recommendations for publishing data on organizations' own
+websites that will be used for ingestion into the registry using the Credential
+Registry Publish Action.
 
 ### Publish data in CTDL JSON-LD similar to how it is presented in the Registry
 
@@ -98,8 +102,13 @@ in this repository shows how to do this.
 
 **Example workflow file for publishing data to the sandbox**
 
+For each set of URLs to publish to a particular Registry environment, create a
+workflow YAML file in the `.github/workflows` directory of the repository. For
+example, to publish the LearningProgram-1 example to the sandbox, create a file
+named `publish-learningprogram-1.yml` with the following contents:
+
 ```yaml
-name: Publish test LearningProgram 1 from examples to the registry
+name: Publish test LearningProgram 1 from examples to the Registry sandbox
 on: workflow_dispatch
 env:
   REGISTRY_ENV: 'sandbox'
@@ -149,3 +158,63 @@ jobs:
   [using secrets in GitHbActions](https://docs.github.com/en/actions/security-guides/using-secrets-in-github-actions#creating-secrets-for-a-repository).
   Creating a secret at the repository level is likely the best fit for most
   invocations of the Credential Registry Publish Action.
+
+To invoke the workflow using `workflow_dispatch`, navigate to the repository in
+GitHub and click the "Actions" tab. Click the "Publish test LearningProgram 1
+from examples to the registry" workflow, then click the "Run workflow" button.
+The workflow will run and publish the data to the sandbox registry. If there are
+errors, they will be reported in the workflow run. If the workflow runs
+successfully, the data will be published to the sandbox registry. For more
+information, see
+[Manually running a workflow](https://docs.github.com/en/actions/managing-workflow-runs/manually-running-a-workflow)
+
+### Migrating to production
+
+To migrate from publishing to the sandbox to publishing to production, change
+the `REGISTRY_ENV` environment variable in the above file (the `registry-env`
+input to the Publish step) from `sandbox` to `production`. The API key will need
+to be updated to the production API key as well, and the organization CTID will
+likely need to be updated to the production value. It is best to create a new
+workflow file for production, rather than updating the sandbox file, so that the
+sandbox file can be retained for testing.
+
+Choose what event should trigger a run of the workflow. It is good to start with
+`on: workflow_dispatch` for production, and after confirmation that configured
+API key, organization CTID, and URLs are correct, change the trigger to an
+appropriate value for your use case, such as `on: push` or `on: schedule`, to
+run the workflow automatically.
+
+**Example: Scheduling publication to occur regularly**
+
+To run a workflow automatically on a schedule, you can use a
+[cron syntax](https://www.netiq.com/documentation/cloud-manager-2-5/ncm-reference/data/bexyssf.html#beykoa4)
+to define a time to run the workflow. For example the following cron syntax will
+run the workflow at 8am server time on the first day of each month:
+`'0 8 1 * *'`. Note that `*` is a special character in YAML so you have to quote
+the cron invocation string.
+
+````yaml
+
+Create the workflow file `.github/workflows/publish-learningprogram-1.yml` with
+the following contents:
+
+```yaml
+name: Publish test LearningProgram 1 from examples to the Registry production environment
+on:
+  schedule:
+    - cron:  '0 8 1 * *'
+env:
+  REGISTRY_ENV: 'production'
+  URLS: 'https://credentialengine.github.io/credential-registry-ingest-examples/LearningProgram/1/LearningProgram-1.json'
+jobs:
+  publish:
+    runs-on: 'ubuntu-latest'
+    steps:
+      - name: Publish
+        uses: credentialengine/credential-registry-publish-action@main
+        with:
+          registry-env: ${{ env.REGISTRY_ENV }}
+          urls: ${{ env.URLS }}
+          organization-ctid: 'ce-7f42a13b-2c7e-4cbb-bbae-337a5187cf61'
+          registry-api-key: ${{ secrets.PRODUCTION_API_KEY }}
+````
