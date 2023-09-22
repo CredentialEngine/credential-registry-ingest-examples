@@ -4,7 +4,7 @@ title: Credential Registry Publish Action
 
 Credential Engine is now offering a GitHub Action that makes it easy to publish
 data to the Credential Registry. The action is available in the
-[GitHub Marketplace](#TBD) and may be incorporated in partner organizations'
+[GitHub Marketplace](#TODO) and may be incorporated in partner organizations'
 CI/CD pipelines as new data is published. Publication may be triggered manually,
 scheduled to run at regular intervals, or triggered as a step in a larger
 workflow immediately following applicable data updates. Use the action as best
@@ -102,10 +102,15 @@ in this repository shows how to do this.
 
 **Example workflow file for publishing data to the sandbox**
 
-For each set of URLs to publish to a particular Registry environment, create a
-workflow YAML file in the `.github/workflows` directory of the repository. For
-example, to publish the LearningProgram-1 example to the sandbox, create a file
-named `publish-learningprogram-1.yml` with the following contents:
+For each set of URLs to publish to a particular Registry environment, an
+implementer creates a workflow YAML file in the `.github/workflows` directory of
+a GitHub repository. This can be a repository specific to this purpose, or the
+action can be integrated into a CI/CD pipeline documented in a repository for
+other related code, such as one that also causes the open linked data to be
+published on the organization's website. For example, to publish the
+[LearningProgram-1](LearningProgram/1/LearningProgram-1.json) example to the
+sandbox, create a file named `publish-learningprogram-1.yml` with the following
+contents:
 
 ```yaml
 name: Publish test LearningProgram 1 from examples to the Registry sandbox
