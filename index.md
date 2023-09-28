@@ -144,6 +144,11 @@ jobs:
   this case, the value is a single URL, but multiple URLs may be specified,
   separated by commas. The Credential Registry Publish Action will download the
   data from these URLs and publish it to the Registry.
+- URLs are comma-separated. A comma `,` is a valid character in the path
+  component of a URL, but if any URLs including commas are desired to be used in
+  the `URLS` environment variable, they must be percent-encoded as `%2C`. For
+  example, the URL `https://example.com/path,with,commas` would be written as
+  `https://example.com/path%2Cwith%2Ccommas` in the `URLS` environment variable.
 - Within the Publish step, there are several "inputs" configured. The
   `organization-ctid` input specifies the CTID of the organization publishing
   the data. This is required because the organization must be published to the

@@ -2,7 +2,7 @@
   "@context": "https://credreg.net/ctdl/schema/context/json",
   "@id": "https://credentialengine.github.io/credential-registry-ingest-examples/LearningProgram/1/LearningProgram-1.json",
   "@type": "ceterms:LearningProgram",
-  "ceterms:ctid": "ce-bada0d68-f026-441d-80c1-cdabace4e525",
+  "ceterms:ctid": "ce-23b0e606-545c-4383-8630-f97ec3b190fa",
   "ceterms:name": { "en-US": "Lifelong Learning Accelerator" },
   "ceterms:hasPart": [
     "https://credentialengine.github.io/credential-registry-ingest-examples/LearningProgram/1/Course-1a.json",
