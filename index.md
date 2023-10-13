@@ -3,13 +3,46 @@ title: Credential Registry Publish Action
 ---
 
 Credential Engine is now offering a GitHub Action that makes it easy to publish
-data to the Credential Registry. The action is available in the
+data to the Credential Registry for organizations that choose to publish their
+own open data on their own website. The action is available in the
 [GitHub Marketplace](#TODO) and may be incorporated in partner organizations'
 CI/CD pipelines as new data is published. Publication may be triggered manually,
 scheduled to run at regular intervals, or triggered as a step in a larger
 workflow immediately following applicable data updates. Use the action as best
 fits your organization's needs, and provide feedback to Credential Engine to
 help us improve the action.
+
+> TODO: correct flowchart pseudocode to ensure it is valid mermaid syntax and
+> verify correct rendering in GitHub interface...
+
+```mermaid
+Flowchart:
+  Sign up for a Credential Engine Registry publishing account
+  Publish data in CTDL format on your own website
+  Trigger the Publish Action to push your data to the Registry
+  Monitor for errors when the Action runs
+```
+
+This tool enables organizations to publish a wide variety of open data about
+their credentials, learning opportunities, and more, so that it can be
+accessible both on organizational websites and discoverable in the Credential
+Engine Registry via [CredentialFinder.org](https://credentialfinder.org).
+
+**This tool is intended for developers or other technical staff**, probably by
+those implementing the open data publishing strategy. Other methods of
+publishing data to the Registry are available for non-developers, including
+input forms and CSV uploads on the
+[Credential Engine website](https://apps.credentialengine.org/publisher).
+
+## Get assistance and report problems
+
+Reach out to Credential Engine staff via
+[email](mailto:info@credentialengine.org?subject=Credential%20Registry%20Publish%20Action)
+if you need help using the tool. To report issues, you can use email or file
+them on GitHub at the
+[credential-registry-publish-action](https://github.com/credentialengine/credential-registry-publish-action/issues)
+repository. This software is open source and open for contributions and
+improvements.
 
 ## Philosophy for self-publishing linked open data
 
@@ -41,13 +74,58 @@ includes that linked open data entities should:
 - Publish data in an open and standardized or standards-track format at the URL
   for the object.
 
+For the purposes of this tool, this strategy involves publishing an object at a
+self-assigned canonical URL, in the form of CTDL-formatted JSON-LD, which is
+machine readable. This format of data should be returned at a minmimum if the
+HTTP client requests `application/json` or `application/ld+json` in the `Accept`
+header, but implementers may choose to return a human-readable HTML format when
+a client requests `text/html` or `*/*` as web browsers do. If the `Accept`
+header is missing from the request, it is best to return the JSON format.
+
 ## Recommended practices for publishing data to the Credential Registry
 
 Here are some specific recommendations for publishing data on organizations' own
 websites that will be used for ingestion into the registry using the Credential
 Registry Publish Action.
 
-### Publish data in CTDL JSON-LD similar to how it is presented in the Registry
+### Self-assign CTIDs for each entity of a relevant class
+
+Credential Transparency Identifiers (CTIDs) serve as a consistent string-based
+identifier for key content that stays consistent wherever that content appears.
+When organizations publish to the Registry using other tools, CTIDs are often
+assigned at time of publishing by the Registry. But when self-publishing linked
+open data in CTDL format, CTIDs are self-assigned and then recorded in the
+Registry the time the resource is first published. The Credential Registry
+Publish Action requires CTIDs to be self-assigned for entity classes that use
+them, to enable updating of appropriate resources on subsequent publication runs
+and to avoid duplication of resources in the Registry.
+
+CTIDs are assigned for LearningPrograms, Orgamizations, Courses, Credentials and
+more. See the full list of classes that use CTIDs and learn more
+[about CTIDs](#TODO).
+
+Each CTID is in the format of a hexadecimal UUID v4, with the prefix `ce-`, like
+`ce-23b0e606-545c-4383-8630-f97ec3b190fa`. There can only be one resource with
+each CTID published to the Registry, so software bugs resulting in duplicate
+identifiers will cause errors.
+
+### Include `@id` and `@type` in each object. Include `@context` in each document
+
+Assign the `@id` property to the URL of each object. The CTDL `@context` should
+appear at the top level of every document, and a `@type` should appear for each
+object within the document. For example, if a LearningProgram is hosted on the
+URL `https://example.com/lp/123`, the document should include this URL as the
+value of the `@id` property at the top level of that object as follows:
+
+```jsonld
+{
+  "@context": "https://credreg.net/ctdl/schema/context/json",
+  "@id": "https://example.com/lp/123",
+  "@type": "ceterms:LearningProgram"
+}
+```
+
+### Other than `@id`, publish data in CTDL JSON-LD similar to how it is presented in the Registry
 
 This website and its examples, as well as the error messages you might encounter
 when publishing data, will guide you in adopting the structure used by the
@@ -56,24 +134,16 @@ Registry to publish data in the open vocabulary
 
 - Use language maps for string values, identifying the language in which they
   appear. This is preferred over other valid JSON-LD methods for identifying
-  language, such as `@language` properties at the root level of documents.
-- Use only the CTDL Context and the CTDL Terms vocabulary. Do not use other
+  language, such as `@language` properties at the root level of documents. It is
+  also recommended to use the `ceterms:inLanguage` property to designate the
+  language of the content for classes with CTIDs.
+- Use only the CTDL Context for these documents for simplicity. Do not use other
   vocabularies, such as schema.org, to describe your data embedded in the same
   files unless you know what you are doing. The Credential Registry will
   typically ignore data using other vocabularies, but it is possible to
-  introduce conflicts that will
-- For ease of publishing, sometimes it makes sense to offer both a `@graph`
-  style presentation in addition to or instead of individual objects posted at
-  their own URLs. The Credential Registry Publish Action will accept both
-  styles, and the examples on this website, especially for
-  [Learning Programs](LearningProgram/index.md), show how to publish data in
-  both styles. However, the risk of accidentally introducing incompatibilities
-  between multiple representations of data is higher when using both the
-  `@graph` and individual object styles, so it is recommended to publish data at
-  their own URLs whenever possible. If publishing your own `@graph` endpoints,
-  ensure that object IDs are well-selected and do not introduce URLs for
-  individual objects that do not resolve to an up-to-date representation of that
-  object.
+  introduce conflicts that would disrupt the publishing of data intended for the
+  Registry. (At the moment, the tool may reject certain input if the value of
+  the context is not exactly the string in the example above.)
 
 ### Meet the minimum data policy for the objects you are publishing
 
@@ -177,6 +247,11 @@ errors, they will be reported in the workflow run. If the workflow runs
 successfully, the data will be published to the sandbox registry. For more
 information, see
 [Manually running a workflow](https://docs.github.com/en/actions/managing-workflow-runs/manually-running-a-workflow)
+
+#### Testing locally
+
+If you desire, you may clone the code and set the environment variables of the
+inputs in an ignored `.env`
 
 ### Migrating to production
 
