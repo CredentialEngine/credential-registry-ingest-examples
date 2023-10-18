@@ -2,7 +2,7 @@
   "@context": "https://credreg.net/ctdl/schema/context/json",
   "@id": "https://credentialengine.github.io/credential-registry-ingest-examples/LearningProgram/1/Course-1a.json",
   "@type": "ceterms:Course",
-  "ceterms:ctid": "ce-9eb5105c-c5a5-4cf5-b6e8-e228400b9f34",
+  "ceterms:ctid": "ce-7160aae4-5185-4564-95ab-428419974643",
   "ceterms:name": {
     "en-US": "Personal Growth Mastery"
   },
