@@ -55,10 +55,16 @@ production Credential Registry record for your Organization, in the form
 This ensures viewers of the data can navigate to an appropriate representation
 of the organization.
 
-Any other terms referencing an organization such as `ceterms:recognizedBy`
-should either use the registry format URL or a blank node identifier for a node
-included in the graph as is done in the
-[example credential](1/Credential-1-graph.json). Using registry URLs will
-complicate cross-registry environment testing, as requests may be rejected if
-the Registry environment does not have a record of the referenced organization
-under the CTID used for production.
+Any other terms referencing an organization such as `ceterms:recognizedBy` may
+be embedded in the Credential data (see [example](1/Credential-1.json)). A blank
+node identifier for a node will be assigned automatically (or you could include
+one manually as is done in the [example credential](1/Credential-1-graph.json)
+in the alternate graph format). Using registry URLs will complicate
+cross-registry environment testing, as requests may be rejected if the Registry
+environment does not have a record of the referenced organization under the CTID
+used for production.
+
+### Example Data
+
+- [Example Credential](1/Credential-1.json)
+- [Example Credential (graph variant)](1/Credential-1-graph.json)
