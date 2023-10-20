@@ -3,6 +3,9 @@
   "@id": "https://credentialengine.github.io/credential-registry-ingest-examples/Organization/1/Organization-1.json",
   "@type": "ceterms:Organization",
   "ceterms:name": { "en-US": "Example University" },
+  "ceterms:description": {
+    "en-US": "It is like a real university, but it is an example."
+  },
   "ceterms:ctid": "ce-7f42a13b-2c7e-4cbb-bbae-337a5187cf61",
   "ceterms:email": ["contact@example.edu"],
   "ceterms:address": [
