@@ -1,0 +1,121 @@
+{
+  "@context": "https://credreg.net/ctdl/schema/context/json",
+  "@id": "https://example.com/cybersecurity-bachelors-degree.json",
+  "@type": "ceterms:LearningProgram",
+  "ceterms:ctid": "ce-12345678",
+  "ceterms:name": { "en-US": "Cybersecurity Program" },
+  "ceterms:description": {
+    "en-US": "The Bachelor of Science in Cybersecurity is a comprehensive program that prepares students for careers in the rapidly growing field of cybersecurity. Students will learn about the latest technologies and techniques for protecting computer systems and networks from cyber attacks, as well as the legal and ethical issues surrounding cybersecurity."
+  },
+  "ceterms:ownedBy": [
+    "https://credentialengine.github.io/credential-registry-ingest-examples/Organization/1/Organization-1.json"
+  ],
+  "ceterms:requires": [
+    {
+      "@type": "ceterms:ConditionProfile",
+      "ceterms:name": {
+        "en-US": "Admission Requirements"
+      },
+      "ceterms:assertedBy": [
+        "https://credentialengine.github.io/credential-registry-ingest-examples/Organization/1/Organization-1.json"
+      ],
+      "ceterms:description": {
+        "en-US": "Applicants must have a high school diploma or equivalent, and must meet minimum GPA and standardized test score requirements."
+      }
+    }
+  ],
+  "ceterms:offeredBy": [
+    "https://credentialengine.github.io/credential-registry-ingest-examples/Organization/1/Organization-1.json"
+  ],
+  "ceterms:inLanguage": ["en-US"],
+  "ceterms:isCreditBased": true,
+  "ceterms:deliveryType": [
+    {
+      "@type": "ceterms:CredentialAlignmentObject",
+      "ceterms:framework": "https://credreg.net/ctdl/terms/Delivery",
+      "ceterms:targetNode": "deliveryType:OnlineDelivery",
+      "ceterms:frameworkName": { "en-US": "Delivery Type" },
+      "ceterms:targetNodeName": { "en-US": "Online Delivery" },
+      "ceterms:targetNodeDescription": {
+        "en-US": "Delivery is exclusively through online mechanisms."
+      }
+    }
+  ],
+  "ceterms:deliveryTypeDescription": {
+    "en-US": "All courses are delivered online, with no on-campus requirements."
+  },
+  "ceterms:estimatedCost": [
+    {
+      "@type": "ceterms:CostProfile",
+      "ceterms:name": { "en-US": "Tuition and Fees" },
+      "ceterms:price": 25000.0,
+      "ceterms:currency": "US Dollar",
+      "ceterms:costDetails": "https://example.com/#cybersecurity-bachelors-degree-costs",
+      "ceterms:description": {
+        "en-US": "Tuition and fees for the entire program."
+      },
+      "ceterms:directCostType": {
+        "@type": "ceterms:CredentialAlignmentObject",
+        "ceterms:framework": "https://credreg.net/ctdl/terms/CostType",
+        "ceterms:targetNode": "costType:AggregateCost",
+        "ceterms:frameworkName": { "en-US": "Cost Type" },
+        "ceterms:targetNodeName": { "en-US": "Aggregate Cost" },
+        "ceterms:targetNodeDescription": { "en-US": "Sum of direct costs." }
+      }
+    }
+  ],
+  "ceterms:occupationType": [
+    {
+      "@type": "ceterms:CredentialAlignmentObject",
+      "ceterms:targetNodeName": { "en-US": "Cybersecurity Analyst" }
+    },
+    {
+      "@type": "ceterms:CredentialAlignmentObject",
+      "ceterms:targetNodeName": { "en-US": "Information Security Manager" }
+    },
+    {
+      "@type": "ceterms:CredentialAlignmentObject",
+      "ceterms:targetNodeName": { "en-US": "Penetration Tester" }
+    },
+    {
+      "@type": "ceterms:CredentialAlignmentObject",
+      "ceterms:targetNodeName": { "en-US": "Security Consultant" }
+    }
+  ],
+  "ceterms:subjectWebpage": "https://example.com/#cybersecurity-bachelors-degree",
+  "ceterms:audienceLevelType": [
+    {
+      "@type": "ceterms:CredentialAlignmentObject",
+      "ceterms:framework": "https://credreg.net/ctdl/terms/AudienceLevel",
+      "ceterms:targetNode": "audLevel:BachelorDegreeLevel",
+      "ceterms:frameworkName": { "en-US": "Audience Level" },
+      "ceterms:targetNodeName": {
+        "en-US": "Bachelor's Degree or Equivalent"
+      },
+      "ceterms:targetNodeDescription": {
+        "en-US": "Intended for those who have completed a bachelor's degree or equivalent."
+      }
+    }
+  ],
+  "ceterms:availableOnlineAt": [
+    "https://example.com/#cybersecurity-bachelors-degree"
+  ],
+  "ceterms:estimatedDuration": [
+    {
+      "@type": "ceterms:DurationProfile",
+      "ceterms:description": {
+        "en-US": "Four years, with a recommended course load of 15 credits per semester."
+      }
+    }
+  ],
+  "ceterms:lifeCycleStatusType": {
+    "@type": "ceterms:CredentialAlignmentObject",
+    "ceterms:framework": "https://credreg.net/ctdl/terms/LifeCycleStatus",
+    "ceterms:targetNode": "lifeCycle:Active",
+    "ceterms:frameworkName": { "en-US": "Life Cycle Status" },
+    "ceterms:targetNodeName": { "en-US": "Active" },
+    "ceterms:targetNodeDescription": {
+      "en-US": "Resource is active, current, ongoing, offered, operational, or available."
+    }
+  }
+}

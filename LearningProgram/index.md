@@ -39,7 +39,14 @@ includes a significant amount of metadata, including estimated costs, required
 prerequisites, and related occupations.
 
 - [LearningProgram-1.json](1/LearningProgram-1.json)
-- hasPart: [Course-1a.json](1/Course-1a.json)
-- hasPart: [Course-1a.json](1/Course-1a.json)
-- hasPart: [Course-1a.json](1/Course-1a.json)
-- ownedBy: [Organization-1.json](../Organization/1/Organization-1.json)
+  - hasPart: [Course-1a.json](1/Course-1a.json)
+  - hasPart: [Course-1a.json](1/Course-1a.json)
+  - hasPart: [Course-1a.json](1/Course-1a.json)
+  - ownedBy: [Organization-1.json](../Organization/1/Organization-1.json)
+- [LearningProgram-1-graph.json](1/LearningProgram-1-graph.json) - a JSON-LD
+  graph variant of the above.
+
+**Example Learning Program: Cybersecurity Program**
+
+- [LearningProgram-2.json](2/LearningProgram-2.json) - Program that doesn't
+  reference any parts.
