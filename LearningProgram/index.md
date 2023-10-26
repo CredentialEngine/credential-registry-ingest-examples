@@ -48,5 +48,6 @@ prerequisites, and related occupations.
 
 **Example Learning Program: Cybersecurity Program**
 
-- [LearningProgram-2.json](2/LearningProgram-2.json) - Program that doesn't
-  reference any parts.
+A program that doesn't reference any parts.
+
+- [LearningProgram-2.json](2/LearningProgram-2.json)

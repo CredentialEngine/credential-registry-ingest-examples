@@ -5,23 +5,17 @@ title: Credential Registry Publish Action
 Credential Engine is now offering a GitHub Action that makes it easy to publish
 data to the Credential Registry for organizations that choose to publish their
 own open data on their own website. The action is available in the
-[GitHub Marketplace](#TODO) and may be incorporated in partner organizations'
-CI/CD pipelines as new data is published. Publication may be triggered manually,
-scheduled to run at regular intervals, or triggered as a step in a larger
-workflow immediately following applicable data updates. Use the action as best
-fits your organization's needs, and provide feedback to Credential Engine to
-help us improve the action.
+[GitHub Marketplace](https://github.com/marketplace/actions/ingest-resources-to-the-credential-registry)
+and may be incorporated in partner organizations' CI/CD pipelines as new data is
+published. Publication may be triggered manually, scheduled to run at regular
+intervals, or triggered as a step in a larger workflow immediately following
+applicable data updates. Use the action as best fits your organization's needs,
+and provide feedback to Credential Engine to help us improve the action.
 
-> TODO: correct flowchart pseudocode to ensure it is valid mermaid syntax and
-> verify correct rendering in GitHub interface...
-
-```mermaid
-Flowchart:
-  Sign up for a Credential Engine Registry publishing account
-  Publish data in CTDL format on your own website
-  Trigger the Publish Action to push your data to the Registry
-  Monitor for errors when the Action runs
-```
+- Sign up for a Credential Engine Registry publishing account
+- Publish data in CTDL format on your own website
+- Trigger the Publish Action to push your data to the Registry
+- Monitor for errors when the Action runs
 
 This tool enables organizations to publish a wide variety of open data about
 their credentials, learning opportunities, and more, so that it can be
@@ -76,7 +70,7 @@ includes that linked open data entities should:
 
 For the purposes of this tool, this strategy involves publishing an object at a
 self-assigned canonical URL, in the form of CTDL-formatted JSON-LD, which is
-machine readable. This format of data should be returned at a minmimum if the
+machine readable. This format of data should be returned at a minimum if the
 HTTP client requests `application/json` or `application/ld+json` in the `Accept`
 header, but implementers may choose to return a human-readable HTML format when
 a client requests `text/html` or `*/*` as web browsers do. If the `Accept`
@@ -100,9 +94,9 @@ Publish Action requires CTIDs to be self-assigned for entity classes that use
 them, to enable updating of appropriate resources on subsequent publication runs
 and to avoid duplication of resources in the Registry.
 
-CTIDs are assigned for LearningPrograms, Orgamizations, Courses, Credentials and
+CTIDs are assigned for LearningPrograms, Organizations, Courses, Credentials and
 more. See the full list of classes that use CTIDs and learn more
-[about CTIDs](#TODO).
+[about CTIDs](https://credreg.net/ctdl/ctid#ctid_classes).
 
 Each CTID is in the format of a hexadecimal UUID v4, with the prefix `ce-`, like
 `ce-23b0e606-545c-4383-8630-f97ec3b190fa`. There can only be one resource with
@@ -125,7 +119,7 @@ value of the `@id` property at the top level of that object as follows:
 }
 ```
 
-### Other than `@id`, publish data in CTDL JSON-LD similar to how it is presented in the Registry
+### Other than `@id` and embedded non-primary classes, publish data in CTDL JSON-LD similar to how it is presented in the Registry
 
 This website and its examples, as well as the error messages you might encounter
 when publishing data, will guide you in adopting the structure used by the
@@ -144,6 +138,19 @@ Registry to publish data in the open vocabulary
   introduce conflicts that would disrupt the publishing of data intended for the
   Registry. (At the moment, the tool may reject certain input if the value of
   the context is not exactly the string in the example above.)
+- Blank nodes that appear in registry `/graph` endpoints should be embedded in
+  the document rather than presented as a graph in most cases. For example, if a
+  LearningProgram has an alignment to a concept that doesn't have its own unique
+  URL, in the Registry this may be presented as a blank node, but in your source
+  document, just embed the alignment object in the credential. See the
+  `ceterms:occupationType` alignments in
+  [LearningProgram-1.json](1/LearningProgram-1.json) for an example.
+- Use exactly the main CTDL context as a string in all your documents. For
+  example, this line should appear verbatim in each JSON file:
+  `"@context": "https://credreg.net/ctdl/schema/context/json",`. In the future,
+  this tool may be extended to support JSON-LD processing operations that would
+  allow the use of other contexts, but for now, this is the only context that is
+  supported.
 
 ### Meet the minimum data policy for the objects you are publishing
 
@@ -155,6 +162,19 @@ properties also appear. The Credential Registry API will enforce the minimum
 data policy, and if some required data is missing, error messages will help
 operators identify the missing data. After correcting the data, the Credential
 Registry Publish Action can be triggered again to publish the data.
+
+### A note on publishing Graphs
+
+This tool is capable of processing input objects in the form of a
+[JSON-LD graph](https://www.w3.org/TR/json-ld/#named-graphs), meaning that if it
+includes a `@graph` property at the top level, the entities within it must each
+have an `@id` property that is the canonical URL for that entity. This tool will
+interpret an entity included in a graph that you have included in source URLs as
+a convenience to load many documents at once with one HTTP request rather than
+needing to make individual calls for each URL. However, if you use this
+approach, you must ensure that the `@id` properties of each entity are the
+canonical URLs for those entities. It is possible to introduce errors that will
+not be caught by the tool if you tell it to trust you on bad data.
 
 ## How to use the Credential Registry Publish Action
 

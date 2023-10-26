@@ -1,8 +1,8 @@
 {
   "@context": "https://credreg.net/ctdl/schema/context/json",
-  "@id": "https://example.com/cybersecurity-bachelors-degree.json",
+  "@id": "https://credentialengine.github.io/credential-registry-ingest-examples/LearningProgram/2/LearningProgram-2.json",
   "@type": "ceterms:LearningProgram",
-  "ceterms:ctid": "ce-12345678",
+  "ceterms:ctid": "ce-602de2f0-3593-4b46-8386-85554cd582cd",
   "ceterms:name": { "en-US": "Cybersecurity Program" },
   "ceterms:description": {
     "en-US": "The Bachelor of Science in Cybersecurity is a comprehensive program that prepares students for careers in the rapidly growing field of cybersecurity. Students will learn about the latest technologies and techniques for protecting computer systems and networks from cyber attacks, as well as the legal and ethical issues surrounding cybersecurity."
