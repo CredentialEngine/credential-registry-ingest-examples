@@ -256,7 +256,7 @@
     {
       "@id": "https://credentialengine.github.io/credential-registry-ingest-examples/LearningProgram/1/Course-1b.json",
       "@type": "ceterms:Course",
-      "ceterms:ctid": "ce-cb070f9b-ed23-411e-babe-23341393bce7",
+      "ceterms:ctid": "ce-3c5e4bbc-40c3-44eb-90c2-3f27d98d88f1",
       "ceterms:name": { "en-US": "Digital Skills Revolution" },
       "ceterms:ownedBy": [
         "https://credentialengine.github.io/credential-registry-ingest-examples/Organization/1/Organization-1.json"
@@ -332,7 +332,7 @@
     {
       "@id": "https://credentialengine.github.io/credential-registry-ingest-examples/LearningProgram/1/Course-1c.json",
       "@type": "ceterms:Course",
-      "ceterms:ctid": "ce-2626fa9d-48d0-4097-b876-56dec861e630",
+      "ceterms:ctid": "ce-991d72b1-c0fd-4d98-8294-6c47bc3a2122",
       "ceterms:name": { "en-US": "Leadership and Innovation Excellence" },
       "ceterms:ownedBy": [
         "https://credentialengine.github.io/credential-registry-ingest-examples/Organization/1/Organization-1.json"
